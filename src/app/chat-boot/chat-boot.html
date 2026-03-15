@@ -1,0 +1,44 @@
+<div class="chat-container">
+    <div class="chat-header">Chat Boot Services</div>
+
+    <div class="chat-box">
+        @if (messages().length > 0) {
+        <div class="date-divider">
+            <span>{{ messages()[0].timestamp | date:'longDate' }}</span>
+        </div>
+        }
+        @for (msg of messages(); track $index) {
+        <div class="message-wrapper" [ngClass]="msg.sender">
+            <div class="message" [ngClass]="msg.sender + '-msg'">
+                {{ msg.text }}
+            </div>
+            <span class="timestamp">
+                {{ msg.timestamp | date:'shortTime' }}
+            </span>
+        </div>
+        }
+
+        @if (showSuggestions()) {
+        <div class="suggestions">
+            @if (!showExtraSuggestions()) {
+            <button (click)="sendMessage('Delivery Issues')">Delivery Issues</button>
+            <button (click)="sendMessage('Payment Issues')">Payment Issues</button>
+            <button (click)="sendMessage('Return Policy')">Return Policy</button>
+            <button (click)="toggleMore()">More..</button>
+            }
+            @else {
+            <button (click)="sendMessage('Return Policy')">Return Policy</button>
+            <button (click)="sendMessage('Track Order')">Track Order</button>
+            <button (click)="sendMessage('Contact Agent')">Contact Agent</button>
+            <button class="more-btn" (click)="toggleMore()">Back</button>
+            }
+        </div>
+        }
+    </div>
+
+    <div class="input-area">
+        <input type="text" [ngModel]="userInput()" (ngModelChange)="userInput.set($event)" (keyup.enter)="sendMessage()"
+            placeholder="Type your question...">
+        <button (click)="sendMessage()">Send</button>
+    </div>
+</div>
