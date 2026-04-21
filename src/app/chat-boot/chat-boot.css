@@ -1,5 +1,5 @@
 .chat-container {
-    width: 350px;
+    width: 375px;
     height: 640px;
     background: #fdfdfd;
     border-radius: 20px;
@@ -24,6 +24,7 @@
     padding: 15px;
     display: flex;
     flex-direction: column;
+    overflow-y: auto;
 }
 
 .message {
@@ -56,6 +57,15 @@
     padding: 0 5px;
 }
 
+.suggestions {
+    display: flex;
+    flex-wrap: wrap;
+    animation: fadeIn 0.5s ease-in;
+    padding: 10px;
+    background: #fafafa;
+    border-radius: 10px;
+}
+
 .suggestions button {
     background: white;
     border: 1px solid #6200ee;
@@ -84,10 +94,14 @@ input {
     border: none;
     outline: none;
     padding: 8px;
+    position: sticky;
+    bottom: 0;
+    background: white;
 }
 
 button {
     border-radius: 12px;
+    padding: 10px;
     color: #6200ee;
     font-weight: bold;
     cursor: pointer;
@@ -98,11 +112,6 @@ button:hover {
     color: white;
 }
 
-.suggestions {
-    display: flex;
-    flex-wrap: wrap;
-    animation: fadeIn 0.5s ease-in;
-}
 
 @keyframes fadeIn {
     from {

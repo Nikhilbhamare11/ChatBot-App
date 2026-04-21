@@ -23,7 +23,6 @@
             @if (!showExtraSuggestions()) {
             <button (click)="sendMessage('Delivery Issues')">Delivery Issues</button>
             <button (click)="sendMessage('Payment Issues')">Payment Issues</button>
-            <button (click)="sendMessage('Return Policy')">Return Policy</button>
             <button (click)="toggleMore()">More..</button>
             }
             @else {
@@ -39,6 +38,6 @@
     <div class="input-area">
         <input type="text" [ngModel]="userInput()" (ngModelChange)="userInput.set($event)" (keyup.enter)="sendMessage()"
             placeholder="Type your question...">
-        <button (click)="sendMessage()">Send</button>
+        <button (click)="sendMessage()">Send <i class="fa-solid fa-angle-right"></i></button>
     </div>
 </div>
