@@ -46,7 +46,7 @@ http://localhost:4200
 
 **Nikhil Bhamare**
 
-Java Full Stack Developer | Frontend Developer
+Java Full Stack Developer
 
 Aspiring Java Full Stack Developer passionate about building modern web applications and learning new technologies.
 
